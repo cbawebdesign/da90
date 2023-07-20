@@ -1,0 +1,60 @@
+{
+    "title": "Wizdm - La tua app pronta subito",
+    "description": "Realizza la tua app velocemente e lancia il tuo prodotto",
+    
+    "settings": {
+        "admin": { "label": "Admin" },        
+        "private": [
+            { "label": "Il mio profilo" },
+            { "label": "Impostazioni" },
+            { "label": "Esci" }
+        ]
+    },
+    
+    "navbar": {
+        "public": [
+            { "label": "Wizdm" },
+            { "label": "Chi siamo" },
+            { "label": "Documentazone" },
+            { "label": "Donazioni" }
+        ],
+        "private": [
+            { "label": "Wizdm" },
+            { "label": "Esplora" },
+            { "label": "Chat" },
+            { "label": "Documentazione" },
+            { "label": "Donazioni" }
+        ]
+    },
+
+    "menu": {
+        "public": [
+            { "label": "Wizdm" },
+            { "label": "Chi siamo" },
+            { "label": "Documentazione" },
+            { "label": "Donazioni" },
+            { "label": "Entra/Registrati" }
+        ],
+        "private": [
+            { "label": "Wizdm" },
+            { "label": "Profilo" },
+            { "label": "Esplora" },
+            { "label": "Chat" },
+            { "label": "Documentazione" },
+            { "label": "Impostazioni" },
+            { "label": "Donazioni" },
+            { "label": "Esci" }
+        ]
+    },
+
+    "footer": {
+        "copyright": "Condiviso con saggezza dal pianeta Terra ©{{ year }}",
+      
+        "links": [
+            { "label": "Chi siamo" },
+            { "label": "Termini" },
+            { "label": "Privacy" },
+            { "label": "Contattaci" }
+        ]
+    }
+}

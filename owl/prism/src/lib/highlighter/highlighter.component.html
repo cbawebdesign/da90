@@ -1,0 +1,6 @@
+
+<code *ngIf="!disabled; else transclude" [tokenize]="tokens$ | async"></code>
+
+<ng-template #transclude>
+  <ng-content></ng-content>
+</ng-template>

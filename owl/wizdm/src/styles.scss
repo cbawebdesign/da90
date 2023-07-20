@@ -1,0 +1,99 @@
+// Resets styles with Normalize.css for browser behaviour consistency
+@import '~normalize.css/normalize.css';
+
+// Import Angular Material theming 
+@import '~@angular/material/theming';
+
+// Load text and icon fonts from the relevant CDN
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&family=Ubuntu:wght@400;700');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Extended');
+@import url('https://use.fontawesome.com/releases/v5.14.0/css/all.css');
+
+/** Uncomment this to self-host the fonts instead */
+$font-path: "/assets/font";
+//@import './styles/fonts';
+//@import './styles/icons';
+
+/* Load all the other partials */
+@import './styles/preloader';
+@import './styles/skeleton';
+@import './styles/material';
+@import './styles/colors';
+@import './styles/prism';
+@import './styles/theming';
+
+// Creates a customized material typography first...
+$wm-typography: mat-typography-config(
+  $font-family:   'Ubuntu, sans-serif',
+  $display-4:     mat-typography-level(112px, 112px, 300),
+  $display-3:     mat-typography-level(72px, 72px, 400),
+  $display-2:     mat-typography-level(56px, 56px, 400),
+  $display-1:     mat-typography-level(45px, 48px, 400),
+  $headline:      mat-typography-level(36px, 48px, 400),
+  $title:         mat-typography-level(24px, 32px, 400),
+  $subheading-2:  mat-typography-level(22px, 28px, 400),
+  $subheading-1:  mat-typography-level(20px, 24px, 400),
+  $body-2:        mat-typography-level(18px, 24px, 400),
+  $body-1:        mat-typography-level(16px, 20px, 400),
+  $button:        mat-typography-level(16px, 20px, 400)
+);
+
+// Define the main theme colors palettes.
+$wm-primary: mat-palette($mat-blue);
+$wm-accent:  mat-palette($mat-amber);//, 400, 600, 800);
+$wm-warn:    mat-palette($mat-red);
+
+// Creates a standard material light theme first...
+$wm-light-theme: mat-light-theme($wm-primary, $wm-accent, $wm-warn);
+//... than overrides with customized fore/background values
+$wm-light-theme: tweak-material-theme($wm-light-theme, 
+
+  $foreground: ( // Overrides Material foreground colors
+
+    base:              mat-color($wm-primary, 900),
+    disabled-button:   rgba(mat-color($wm-primary, 900), 0.26),
+    icon:              mat-color($wm-primary),
+    icons:             mat-color($wm-primary),
+    text:              mat-color($wm-primary, 900),
+    //light-text:       mat-color($primary, 50),
+    dark-text:         mat-color($wm-primary, 900)
+  )
+);
+
+// Include the keys definition for the emoji-keyboard once
+@import 'emoji-keyboard-keys';
+@include wm-emoji-keyboard-keys("/assets/emoji/sheets/32.png");
+
+// Creates the .preloader spinner class applying the theme color
+@include preloader(150px, 3px, mat-color($wm-primary)) {
+
+  // Includes a background option adapting to the OS color scheme. This will apply the proper background color
+  // until the app loads and the .darl-mode class gets applied according to the user preferences
+  &.background {
+
+    @media(prefers-color-scheme: light) { background: map-get($mat-light-theme-background, 'background'); }
+    @media(prefers-color-scheme: dark)  { background: map-get($mat-dark-theme-background,  'background'); }
+  }
+};
+
+// Initialze the global application theme, make sure to call this only once
+@include wm-init-application-theme($wm-light-theme, $wm-typography);
+
+.dark-mode {
+
+  // Define the main theme colors palettes.
+  $wm-dark-primary: mat-palette($mat-blue, 700, 300, 900, 700);
+  $wm-dark-accent:  mat-palette($mat-amber, 700, 300, 900, 700);
+  $wm-dark-warn:    mat-palette($mat-red, 700, 300, 900, 700);
+
+  $wm-dark-theme: mat-dark-theme($wm-dark-primary, $wm-dark-accent, $wm-dark-warn);
+
+  // Initialze the global application theme, make sure to call this only once
+  @include wm-init-application-colors($wm-dark-theme);
+}
+
+// Disables outline on all elements
+* { outline: none; }
+
+// Applies a smooth scroll behaviour whenever supported
+html { scroll-behavior: smooth; }

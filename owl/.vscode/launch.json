@@ -1,0 +1,29 @@
+
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch https://localhost with sourcemaps",
+			"type": "chrome",
+			"request": "launch",
+			"url": "https://localhost:4200",
+			"webRoot": "${workspaceRoot}/wizdm",
+			"userDataDir": "${workspaceRoot}/.vscode/chrome",
+			"sourceMaps": true,
+			"timeout": 30000,
+			"runtimeArgs": [
+				"--start-maximized"
+			]
+		},
+		{
+			"name": "Attach with sourcemaps",
+			"type": "chrome",
+			"request": "attach",
+			"port": 9222,
+			"urlFilter": "https://localhost:4200/*",
+			"webRoot": "${workspaceRoot}/wizdm",
+			"sourceMaps": true,
+			"timeout": 30000
+		}
+	]
+}

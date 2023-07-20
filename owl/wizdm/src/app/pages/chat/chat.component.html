@@ -1,0 +1,32 @@
+
+<!-- Loads the localized content -->
+<div class="new">
+  <div [hidden]="user">
+  
+    <h2>Sign in with your phone number</h2>
+    <label for="phone">Phone Number</label><br>
+    <input type="text" [(ngModel)]="phoneNumber.country" class="input" placeholder="Country Code" maxlength="2">
+    <input type="text" [(ngModel)]="phoneNumber.area" class="input" placeholder="Area Code" maxlength="3">
+    <input type="text" [(ngModel)]="phoneNumber.prefix" class="input" placeholder="Phone Number" maxlength="3">
+    <input type="text" [(ngModel)]="phoneNumber.line" class="input" placeholder="Phone Number" maxlength="4">
+  
+    <div id="recaptcha-container"></div>
+    
+    <!-- <button mat-button 
+                       [color]="action.color || 'accent'" 
+                       >SMS Login Code
+    </button> -->
+    
+    <button class="ahh" (click)="sendLoginCode()" id="recaptcha-container">SMS Login Code(Please allow up to 1 minute)</button>
+    <div *ngIf="windowRef.confirmationResult">
+      <label for="code">Enter Your Verification Code Here(Please allow up to 1 minute to receive your code)</label>
+      <input class="ahh" type="text" name="code" [(ngModel)]="verificationCode" class="input">
+      <button class="ahh"  (click)="verifyLoginCode()">Verify</button>
+    </div>
+  </div>
+  <div *ngIf="user">
+    you have successfully logged in with your phone number. Click the "Documents" tab on the top left of the page to view a list of available documents.
+  </div>
+  </div>
+  
+    

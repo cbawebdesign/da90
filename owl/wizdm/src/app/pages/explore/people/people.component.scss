@@ -1,0 +1,16 @@
+:host {
+
+  position: relative;
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  .mat-form-field, .mat-flat-button[type="submit"] {
+    min-width: 300px;
+  }
+
+  .skeleton-loading.text { max-width: 70%; }
+  h3.skeleton-loading.text { width: 120px; }
+  p.skeleton-loading.text { width: 50%; }
+}

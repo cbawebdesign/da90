@@ -1,0 +1,29 @@
+<ng-container *ngFor="let node of block?.content">
+
+  <ng-container [ngSwitch]="node.type">
+
+    <!-- Headings -->
+    <ng-container *ngSwitchCase="'heading'">
+      <h1 *ngIf="node.level === 1" [wm-editable]="node"></h1>
+      <h2 *ngIf="node.level === 2" [wm-editable]="node"></h2>
+      <h3 *ngIf="node.level === 3" [wm-editable]="node"></h3>
+      <h4 *ngIf="node.level === 4" [wm-editable]="node"></h4>
+      <h5 *ngIf="node.level === 5" [wm-editable]="node"></h5>
+      <h6 *ngIf="node.level === 6" [wm-editable]="node"></h6>
+    </ng-container>
+
+    <!-- Paragraphs -->
+    <p *ngSwitchCase="'paragraph'" [wm-editable]="node"></p>
+    
+    <!-- Numbered lists with nesting -->
+    <ol *ngSwitchCase="'numbered'" [wm-list]="node"></ol>
+
+    <!-- Bulleted lists with nesting -->
+    <ul *ngSwitchCase="'bulleted'" [wm-list]="node"></ul>
+
+    <!-- Blockquotes nesting disabled -->
+    <!--blockquote *ngSwitchCase="'blockquote'" [wm-block]="node"></blockquote-->
+
+  </ng-container>
+
+</ng-container>

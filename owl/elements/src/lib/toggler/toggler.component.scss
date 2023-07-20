@@ -1,0 +1,65 @@
+$toggler-size: 20px !default;
+
+.wm-toggler {
+  display: inline-block;
+  position: relative;
+  
+  width: $toggler-size;
+  height: $toggler-size;
+
+  // Applies the current text color to the toggler
+  .toggler-line { background-color:currentColor; }
+
+  // Style 'menu'
+  &[toggler-style='menu'] {
+
+    $element-size: 2px;
+
+    .toggler-line {
+      position: absolute;
+      height: $element-size;
+      width: $toggler-size;
+      border-radius: $element-size / 2;
+
+      &[top]    { top: $toggler-size / 10 - $element-size / 2;}
+      &[middle] { top: ($toggler-size - $element-size) / 2;}
+      &[bottom] { bottom: $toggler-size / 10 - $element-size / 2;}
+    }
+  }
+
+  // Style 'more' vertical
+  &[toggler-style='more_vert'] {
+
+    $element-size: 4px;
+  
+    .toggler-line {
+      position: absolute;          
+      height: $element-size;
+      width: $element-size;
+      left: ($toggler-size - $element-size) / 2;
+      border-radius: $element-size / 2;
+
+      &[top]    { top: 0;}
+      &[middle] { top: ($toggler-size - $element-size) / 2;}
+      &[bottom] { bottom: 0;}
+    }
+  }
+
+  // Style 'more' horizontal
+  &[toggler-style='more_horiz'] {
+
+    $element-size: 4px;
+  
+    .toggler-line {
+      position: absolute;    
+      height: $element-size;
+      width: $element-size;
+      top: ($toggler-size - $element-size) / 2;
+      border-radius: $element-size / 2;
+
+      &[top]    { left: 0; }
+      &[middle] { left: ($toggler-size - $element-size) / 2; }
+      &[bottom] { right: 0; }
+    }
+  }
+}

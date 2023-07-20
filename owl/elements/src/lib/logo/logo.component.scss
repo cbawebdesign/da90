@@ -1,0 +1,34 @@
+
+.wm-logo {
+  
+  display: inline-flex;
+  vertical-align: text-bottom;
+  outline: none;
+
+  // Disables events on the element...
+  pointer-events: none;
+
+  //...to have them fired only from the logo (and not from the text)
+  svg, img { cursor: pointer; pointer-events: all; }
+  
+  // Inlines the logo by resizing it down to 1.5em
+  &[inline="true"] svg { width: 1.5em; height: 1.5em; }
+
+  // Animates the logo
+  &.animate {
+
+    path:nth-of-type(3) {
+      animation: 500ms ease-in-out infinite alternate animate;
+    }
+
+    path:nth-of-type(2) {
+      animation: 500ms ease-in-out 125ms infinite alternate animate;
+    }
+
+    path:nth-of-type(1) {
+      animation: 500ms ease-in-out 250ms infinite alternate animate;
+    }
+
+    @keyframes animate { from { opacity: 0; } to { opacity: 1; } }
+  }
+}

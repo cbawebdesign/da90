@@ -1,0 +1,14 @@
+{
+  "actions": {
+    "run": { "caption": "Analyze users", "icon": "fas:fa-tasks" },
+    "fix": { "caption": "Fix all anomalies", "icon": "fas:fa-wrench" },
+    "apply": { "caption": "Apply fixes", "icon": "fas:fa-save" }
+  },
+
+  "canLeave": {
+    "title": "Unsaved fixes",
+    "message": "If you leave now, changes won't be saved",
+    "cancel": "Stay",
+    "ok": "Leave anyhow"
+  }
+}

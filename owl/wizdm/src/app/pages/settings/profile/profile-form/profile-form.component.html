@@ -1,0 +1,110 @@
+
+<!-- Profile form w/ localized content -->
+<form [formGroup]="this" fxLayout="column" fxLayoutGap="32px" *wmContent="let msgs select 'settings-profile.form'">
+
+  <!-- User name -->
+  <!-- <mat-form-field>
+    <mat-label>{{ msgs.userName?.label || 'Username' }}</mat-label>
+    <input matInput formControlName="userName">
+    <wm-icon matPrefix [icon]="msgs.userName?.icon"></wm-icon>
+    <mat-hint>{{ hostname + '/@' + value.userName | lowercase }}</mat-hint>
+    <mat-error *ngIf="controls.userName.errors?.required">{{ msgs.userName?.errors?.required }}</mat-error>
+    <mat-error *ngIf="controls.userName.errors?.pattern">{{ msgs.userName?.errors?.format }}</mat-error>
+    <mat-error *ngIf="controls.userName.errors?.exists">{{ msgs.userName?.errors?.exists }}</mat-error>
+  </mat-form-field> -->
+
+  <!-- Full name -->
+  <div fxLayout="row"fxLayout.lt-sm="column" fxLayoutGap="16px">
+
+    <!-- First name -->
+    <!-- <mat-form-field fxFlex="50">
+      <mat-label>{{ msgs.firstName?.label || 'First name' }}</mat-label>
+      <input matInput formControlName="name" cdkFocusInitial>
+      <wm-icon matPrefix [icon]="msgs.firstName?.icon"></wm-icon>
+      <mat-error *ngIf="controls.name.errors?.required">{{ msgs.firstName?.errors?.required }}</mat-error>
+    </mat-form-field> -->
+
+    <!-- Last name -->
+    <!-- <mat-form-field fxFlex="50">
+      <mat-label>{{ msgs.lastName?.label || 'Last name' }}</mat-label>
+      <input matInput formControlName="lastName" cdkFocusInitial>
+      <wm-icon matPrefix [icon]="msgs.lastName?.icon"></wm-icon>
+    </mat-form-field> -->
+
+  </div>
+
+  <!-- Email -->
+  <mat-form-field>
+    <mat-label>{{ msgs.email?.label || 'Email' }}</mat-label>
+    <input matInput formControlName="email">
+    <wm-icon matPrefix [icon]="msgs.email?.icon"></wm-icon>
+    <mat-hint>Limited Partner E-mail</mat-hint>
+    <mat-error *ngIf="controls.email.errors?.email">{{ msgs.email?.errors?.format }}</mat-error>
+  </mat-form-field>
+
+  <!-- Phone -->
+
+
+  <!-- Bio -->
+  <mat-form-field>
+    <mat-label>Limited Partner Fund(s)</mat-label>
+    <textarea matInput formControlName="bio" cdkTextareaAutosize cdkAutosizeMinRows="1"></textarea>
+    <wm-icon matPrefix [icon]="msgs.bio?.icon"></wm-icon>
+    <mat-hint>Digital Alpha Funds you belong to</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Limited Partner Group</mat-label>
+    <textarea matInput formControlName="bio" cdkTextareaAutosize cdkAutosizeMinRows="1"></textarea>
+    <wm-icon matPrefix [icon]="msgs.bio?.icon"></wm-icon>
+    <mat-hint>Limited Partner Group ID</mat-hint>
+  </mat-form-field>
+
+  <!-- Location -->
+  <mat-form-field>
+    <mat-label>{{ msgs.location?.label || 'Location' }}</mat-label>
+    <input matInput formControlName="location">
+    <wm-icon matPrefix [icon]="msgs.location?.icon"></wm-icon>
+    <mat-hint>{{ msgs.location?.hint }}</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>{{ msgs.phone?.label || 'Phone' }}</mat-label>
+    <input matInput formControlName="phone">
+    <wm-icon matPrefix [icon]="msgs.phone?.icon"></wm-icon>
+    <!-- <mat-hint>{{ msgs.phone?.hint }}</mat-hint> -->
+    <mat-error *ngIf="controls.phone.errors?.phone">{{ msgs.phone?.errors?.format }}</mat-error>
+  </mat-form-field>
+
+  <!-- Birthday -->
+  <!-- <mat-form-field>
+    <mat-label>{{ msgs.birth?.label || 'Birthday' }}</mat-label>
+    <input matInput formControlName="birth" [matDatepicker]="picker">
+    <mat-datepicker-toggle matPrefix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker [touchUi]="isMobile" #picker></mat-datepicker>
+    <mat-hint>{{ msgs.birth?.hint }}</mat-hint>
+  </mat-form-field> -->
+
+  <!-- Gender -->
+  <!-- <mat-form-field>  
+    <mat-label>{{ msgs.gender?.label || 'Gender' }}</mat-label>
+    <wm-icon matPrefix [icon]="genderIcon(msgs.gender?.options) || msgs.gender?.icon"></wm-icon>
+    <mat-select formControlName="gender">
+      <mat-option *ngFor="let option of msgs.gender?.options" [value]="option.value">
+      <span><wm-icon [icon]="option.icon"></wm-icon>{{ option.label }}</span>
+      </mat-option>
+    </mat-select> 
+    <mat-hint>{{ msgs.gender?.hint }}</mat-hint>
+  </mat-form-field> -->
+
+  <!-- Language -->
+  <!--mat-form-field>  
+    <mat-label>{{ msgs.language?.label || 'Language' }}</mat-label>
+    <wm-icon matPrefix [icon]="msgs.language?.icon"></wm-icon>
+    <mat-select formControlName="lang">
+      <mat-option *ngFor="let option of msgs.language?.options" [value]="option.value">{{ option.label }}</mat-option>
+    </mat-select>
+    <mat-hint>{{ msgs.language?.hint }}</mat-hint>
+  </mat-form-field-->
+
+</form>

@@ -1,0 +1,40 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "command": "ng",
+    "tasks": [
+        {
+            "label": "serve",
+            "type": "shell",
+            "args": [
+                "serve"
+            ],
+            "isBackground": true,
+            "problemMatcher": []
+        },
+        {
+            "label": "serve ssl",
+            "type": "shell",
+            "args": [
+                "serve",
+                "--ssl",
+                "true"
+            ],
+            "isBackground": true,
+            "problemMatcher": []
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "args": [
+                "build"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "_id": "build",
+                "isDefault": false
+            }
+        }
+    ]
+}

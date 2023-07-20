@@ -1,0 +1,62 @@
+
+// :host {
+//   position: relative;
+//   min-height: 100%;
+//   width: 100%;
+//   padding: 8px;
+
+//   display: flex;
+//   flex-direction: column;
+//   box-sizing: border-box;
+
+//   // Customize the distance between messages
+//   .in, .out { margin-top: 12px; }
+//   .in + .in, .out + .out { margin-top: 2px; }
+
+//   .group-label { 
+//     margin-top: 12px;
+//     margin-bottom: auto; 
+//   }
+// }
+
+// .new {
+//   padding-top: 55px;
+//   border-color: blue;
+// }
+// .ahh{
+//   background-color: rgb(167, 167, 179);
+// }
+// .input {
+//   text-emphasis-color: aqua;
+//   background-color:#ceced8;
+// }
+// .new {
+//     padding-top: 55px;
+//     border-color: rgb(200, 200, 231);
+//   }
+//   .ahh{
+//     background-color: rgb(200, 200, 231);
+//   }
+//   .input {
+//     text-emphasis-color: aqua;
+//     background-color:rgb(200,200, 231);
+//   }
+
+
+:host {
+
+    position: relative;
+    width: 100%;
+  
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    
+    div { padding: 25px; }
+  
+    p { text-align: justify; }
+  
+    button { margin: 16px 0; }
+  }

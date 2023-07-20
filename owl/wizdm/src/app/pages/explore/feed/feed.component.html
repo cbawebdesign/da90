@@ -1,0 +1,14 @@
+
+
+<!-- List all posts in descending order -->
+<wm-post class="mat-elevation-z3" fxLayout="column" *ngFor="let post of feed$ | async" [post]="post"></wm-post>
+
+<!-- Add Post  -->
+  <!-- <ng-template wmFab="right bottom" [direction]="'column'">
+
+    <button mat-mini-fab color="primary"  class="mat-elevation-z11 post__entry" [routerLink]="'postdlg'">
+      <wm-icon   icon="fas:fa-plus" ></wm-icon>
+
+    </button>
+
+  </ng-template> -->

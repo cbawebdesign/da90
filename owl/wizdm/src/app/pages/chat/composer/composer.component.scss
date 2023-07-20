@@ -1,0 +1,30 @@
+
+
+:host {
+  position: relative;
+  
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: stretch; 
+  box-sizing: border-box;
+
+  margin-top: 5px;
+
+  .input {
+    margin: 0 20px;
+  }
+
+  .wm-emoji-input, textarea {
+    word-break: break-all;
+  }
+
+  .tools {
+    cursor: pointer;
+    vertical-align: middle;
+  }
+
+  .mat-icon-button {
+    margin-bottom: 10px;
+  }
+}

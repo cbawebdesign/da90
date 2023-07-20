@@ -1,0 +1,37 @@
+
+<ng-container *wmContent="let msgs select 'settings-profile.photo'">
+
+  <label class="label mat-small">{{ msgs.label || 'Profile picture' }}</label>
+
+  <div class="frame" fxLayout="column" fxLayoutGap="16px">
+
+    <!-- Displays the image as an Avatar -->
+    <wm-avatar color=primary shape="squared" [src]="url"></wm-avatar>
+
+    <!-- Uploading progress bar -->
+    <mat-progress-bar *ngIf="progress$ | async as progress" 
+      color="primary"
+      [mode]="progress < 100 ? 'determiante' : 'indeterminate'" 
+      [value]="progress">
+    </mat-progress-bar>
+    
+    <!-- Upload/Delete button -->
+    <button mat-icon-button class="buttons" (click)="deleteFile()" *ngIf="validUrl; else uploadBtn">
+      <wm-icon [icon]="msgs.delete?.icon || 'delete'"></wm-icon>
+    </button>
+
+    <ng-template #uploadBtn>
+
+      <!-- Hidden file open control -->
+      <input style="display:none" type="file" accept="image/*" (change)="uploadFile($event.target.files)" #openfile />
+
+      <!-- File upload button -->
+      <button mat-icon-button class="buttons" (click)="openfile.value=''; openfile.click()">
+        <wm-icon [icon]="msgs.upload?.icon || 'cloud_upload'"></wm-icon>
+      </button>
+
+    </ng-template>
+
+  </div>
+
+</ng-container>

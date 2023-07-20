@@ -1,0 +1,120 @@
+{
+
+  "background": { "url": "assets/img/nn.svg" },
+
+  "widgets": [
+    {
+      "type": "doesnt-exists",
+      "comment": "This is placed here for testing purposes only"
+    },
+    {
+      "type": "banner",
+      "minHeight": 350,
+
+      "textbox": {
+
+        "order": 1,
+        "title": "Digital Alpha Limited Partner Dashboard",
+
+        "action": { "caption": "Get Started", "link": "chat", "hint": "Click here to get started with your LP Account" },
+
+        "animation": { "name": "landing" }
+      },
+
+      "illustration": {
+        "order": 2,
+        "source": "assets/img/blue-buddha.svg",
+        "color": "primary"
+      }
+    },
+
+    {
+      "type": "feature-matrix",
+
+      "defaultAnimation": "bounceIn",
+
+      "features": [
+        { 
+          "icon": "fas:fa-folder-open",
+          "title": "View All Documents",
+          "description": "Click here to navigate to all your Limited Partner Documents",
+          "url": "explore/docs"
+        },
+        { 
+          "icon": "fas:fa-folder-open",
+          "title": "Account Settings",
+          "description": "Click here to navigate to Account Settings.",
+          "url": "settings/profile"
+
+
+        },
+        { 
+          "icon": "fas:fa-folder-open",
+          "title": "Limited Partner Profile",
+          "description": "Click here to navigate to your profile.",
+          "url": "explore/q12021"
+
+
+        },
+        { 
+          "icon": "fas:fa-chart-bar",
+          "title": "Financials Q1-2021",
+          "description": "Click here to navigate to Financials Q1-2021.",
+          "url": "explore/q12021"
+
+
+        },
+        { 
+          "icon": "fas:fa-chart-bar",
+          "title": "Financials Q2-2021",
+          "description": "Click here to navigate to Financials Q2-2021.",
+          "url": "explore/q22021"
+        },
+        { 
+          "icon": "fas:fa-chart-bar",
+          "title": "Capital Account 2021",
+          "description": "Click here to navigate to Capital Account Statement 2021",
+          "url": "explore/capitalaccount2021"
+        },
+        { 
+          "icon": "far:fa-chart-bar",
+          "title": "K1 2021",
+          "description": "Click here to navigate to Financials Q1-2021",
+          "url": "explore/k12021"
+        },
+        { 
+          "icon": "fas:fa-chart-bar",
+          "title": "Distribution Letters 2021",
+          "description": "Click here to navigate to Distribution Letters 2021",
+          "url": "explore/distribution2021"
+        },
+        
+        { 
+          "icon": "fas:fa-swatchbook",
+          "title": "Capital Calls 2021",
+          "description": "Click here to navigate to Capital Calls 2021",
+          "url": "explore/capitalcall2021"
+        },
+        { 
+          "icon": "far:fa-edit",
+          "title": "Newsletter Q1-2021",
+          "description": "Click here to navigate to Newsletter Q1-2021",
+          "url": "explore/newsletterq1"
+        },
+        { 
+          "icon": "far:fa-edit",
+          "title": "Newsletter Q2-2021",
+          "description": "Click here to navigate to Newsletter Q2-2021",
+          "url": "explore/newsletterq2"
+        },
+        { 
+          "icon": "far:fa-edit",
+          "title": "Newsletter Q3-2021",
+          "description": "Click here to navigate to Newsletter Q3-2021",
+          "url": "explore/newsletterq3"
+        }
+       
+      ]
+    }
+  ]
+}

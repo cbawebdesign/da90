@@ -1,0 +1,11 @@
+{
+
+  "actions": {
+    "edit": { "caption": "Edit profile", "icon": "fas:fa-user-edit", "link": "/settings" },
+    "message": { "caption": "Message", "icon": "far:fa-comment" }
+  },
+
+  "location": { "caption": "Location", "icon": "fas:fa-folder-open", "placeholder": "Digital Alpha Fund" },
+
+  "bio": { "caption": "Bio", "icon": "far:fa-comment", "placeholder": "Limited Partner Dashboard" }
+}

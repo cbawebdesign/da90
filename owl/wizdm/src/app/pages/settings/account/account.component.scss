@@ -1,0 +1,12 @@
+
+:host {
+
+  display: flex;
+  position: relative;
+  flex-flow: column;
+  justify-content: center;
+
+  h3 { margin-top: 32px; }
+
+  & > * { margin-bottom: 16px; }
+}

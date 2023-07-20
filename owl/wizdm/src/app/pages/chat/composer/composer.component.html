@@ -1,0 +1,48 @@
+
+<!-- Loads the localized content -->
+<ng-container *wmContent="let msgs select 'chat.composer'">
+
+  <div class="input" fxLayout="row" fxLayoutAlign="center end" (keydown)="sendOnEnter($event)">
+
+    <!-- Native Input for platforms supporting Emoji natively -->
+    <mat-form-field appearance="legacy" fxFlex="1 1 auto" *ngIf="mode === 'native'; else webMode">
+      <mat-label>{{ msgs.placeholder || 'Type a message' }}</mat-label>
+      <textarea matInput typein [(value)]="value" [newline]="enterMode" [disabled]="disabled" cdkTextareaAutosize cdkAutosizeMinRows="1">
+      </textarea>
+      <wm-icon class="tools" inline matSuffix 
+               [class.color-disabled]="disabled"
+               [icon]="msgs.emoji?.icon || 'insert_emoticon'"                
+               [matTooltip]="msgs.emoji?.tooltip || 'Insert an emoji'" 
+               (mousedown)="!disabled && toggleEmojiKeys()">
+        </wm-icon>
+    </mat-form-field>
+
+    <!-- Emoji Input for the Web -->
+    <ng-template #webMode>
+      <mat-form-field appearance="legacy" fxFlex="1 1 auto">
+        <mat-label>{{ msgs.placeholder || 'Type a message' }}</mat-label>
+        <wm-emoji-input matEmoji typein [(value)]="value" [newline]="enterMode" [disabled]="disabled"></wm-emoji-input>
+        <wm-icon class="tools" inline matSuffix 
+                 [class.color-disabled]="disabled"
+                 [icon]="msgs.emoji?.icon || 'insert_emoticon'"                
+                 [matTooltip]="msgs.emoji?.tooltip || 'Insert an emoji'" 
+                 (mousedown)="!disabled && toggleEmojiKeys()">
+        </wm-icon>
+      </mat-form-field>
+    </ng-template>
+
+    <!-- Send button -->
+    <button mat-icon-button [disabled]="disabled || !valid" (mousedown)="sendNow()">
+      <wm-icon [icon]="msgs.send?.icon || 'send'" [matTooltip]="msgs.send?.tooltip || 'Send'" ></wm-icon>
+    </button>
+
+  </div>
+
+  <!-- On Demand Emoji Keyboard -->
+  <mat-expansion-panel class="padding-0 mat-elevation-z0" (afterExpand)="expanded.emit()" hideToggle>
+  
+    <wm-emoji-keyboard [favorites]="keys" [mode]="mode" (keyPressed)="!disabled && typein($event)"></wm-emoji-keyboard>
+
+  </mat-expansion-panel>
+
+</ng-container>

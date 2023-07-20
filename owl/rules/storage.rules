@@ -1,0 +1,42 @@
+rules_version = '2';
+service firebase.storage {
+
+  match /b/{bucket}/o {
+  
+  	// All images in all folders
+    match /{allPaths=**} {
+  		
+      // Allows everyone to read
+      allow read;
+		}
+    
+    // Public folder's images
+    match /public/{imageId} {
+    	
+      // Only authenticated users can write
+      allow write: if authenticated();
+    }
+    
+    // User's profile folder
+    match /{userId}/{imageId} {
+    
+    	// Allows writing to the individual user only
+      allow write: if itsMe(userId) || itsRole('admin');
+    }
+  }
+  
+  // Checks the requesting user authentication status
+  function authenticated() {
+  	return request.auth != null;
+  }
+  
+  // Checks the authenticated user matches the given one
+  function itsMe(userId) {
+  	return authenticated() && request.auth.uid == userId;
+  }
+  
+  // Checks the current authenticated user's token claims for role-based priviledges
+  function itsRole(role) {
+    return authenticated() && request.auth.token[role] == true;
+  }
+}

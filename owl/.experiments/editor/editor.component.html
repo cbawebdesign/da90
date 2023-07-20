@@ -1,0 +1,33 @@
+
+
+<div fxLayout="row" fxLayoutAlign="space-between strech">
+
+  <div fxFlex="1 1 auto" class="desk">
+
+    <!-- Document body -->
+    <wm-editable-document class="page background-color" 
+      [source]="document"
+      [edit]="editMode" 
+      (contextmenu)="editMode ? menu.open($event) : true" 
+      (navigate)="navigate($event)"
+      (longpress)="longpress.lookup($event)"
+      (change)="save($event)"
+      [@editing]="editMode"
+      #doc>
+    </wm-editable-document>
+
+    <!-- Context menu -->
+    <wm-context-menu color="primary" [sel]="doc.selection" [msgs]="msgs.tools" #menu></wm-context-menu>
+  
+  </div>
+
+</div>
+
+<!-- Toolbox bar -->
+<wm-toolbox *ngIf="editMode" color="primary" [sel]="doc.selection" [msgs]="msgs.tools"></wm-toolbox>
+
+<!-- Longpress key char alternatives -->
+<wm-longpress color="primary" [style.left.px]="doc.caret?.x" [style.top.px]="doc.caret?.y" [sel]="doc.selection" #longpress></wm-longpress> 
+
+<!-- Can Leave Popup -->
+<!--wm-can-leave [msgs]="msgs.canLeave" [allowed]="!edit"></wm-can-leave-->

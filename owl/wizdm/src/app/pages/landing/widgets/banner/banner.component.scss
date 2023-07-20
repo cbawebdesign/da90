@@ -1,0 +1,17 @@
+:host {
+
+  position: relative;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  
+  div { padding: 25px; }
+
+  p { text-align: justify; }
+
+  button { margin: 16px 0; }
+}

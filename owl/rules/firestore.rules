@@ -1,0 +1,113 @@
+rules_version = '2';
+service cloud.firestore {
+
+  match /databases/{database}/documents {
+    	
+  	// Check if the requesting user is signed in
+    function authenticated() {
+  		return request.auth != null && request.auth.uid != null;
+		}
+    
+    // Check if the specified userId corresponds the requesting user
+    function user(userId) {
+  		return authenticated() && request.auth.uid == userId;
+		}
+        
+    // Checks the current authenticated user's token claims for role-based priviledges
+    function role(role) {
+    	return authenticated() && request.auth.token[role] == true;
+    }
+    
+    // Shared content from every collection
+    match /{path=**}/feed/{post} {
+    
+    	// Allows listing public posts for everyone
+    	allow list: if 'public' in resource.data.tags;
+    }
+
+  	// User profiles.
+  	match /users/{userId} {
+    
+    	// Allows everyone to read user data   
+      allow read;
+      
+      // Allows every signed-in user to create a new profile
+      allow create: if authenticated();
+      
+    	// Allows only the user herself to update or delete the profile  
+      allow update, delete: if user(userId) || role("admin");
+      
+      // User's shared content
+    	match /feed/{post} {
+      
+      	// Allow reading user's posts for everyone
+      	allow read;
+      
+        // Allows only the author to write
+        allow write: if user(userId);
+        
+        // Post likes.
+        match /likes/{shard} {
+        
+        	// Allows everyone to read post's likes
+        	allow read;
+
+          // Allows signed-in users to like other's posts
+          allow create, update: if authenticated();
+
+          // Only the owner is allowed to delete it (deleting the post)
+          allow delete: if user(userId);
+        }
+
+        // Post's likers collection.
+        match /likers/{likerId} {
+        
+        	// Allows everyone to read post's likedBy 
+        	allow read;
+
+          // Allows signed-in users to like other's posts
+          allow create, update: if authenticated();
+
+          // Only the owner is allowed to unlike it (deleting itelf from likers)
+          allow delete: if user(likerId);
+        }
+			}
+    }
+    
+    // Conversations (group of users messaging).
+    match /conversations/{convId} {
+    
+    	// Allow signed-in user to create and get new conversations
+    	allow create, update, get: if authenticated();
+            
+      // Allow recipients to list conversations
+      allow list: if authenticated() && (request.auth.uid in resource.data.recipients);
+      
+      // Allow delete only when orphaned (no recipients)
+      allow delete: if authenticated() && (resource.data.recipients.size() == 0);
+      
+      // Messages.
+      match /messages/{messageId} {
+      
+      	// Returns the parent's recipients list
+      	function recipients() {
+        	// Uses a variable to make sure the following 'in' clause will work 
+        	let conv = get(/databases/$(database)/documents/conversations/$(convId));  
+          return conv.data.recipients;
+        }
+      
+				// Allows authenticated users creating messages
+      	allow create: if authenticated();
+        
+        // Allows recipients
+        allow list: if authenticated() && (request.auth.uid in recipients());
+        
+        // Allows only the sender to update and delete a message 
+        allow update, delete: if user(resource.data.sender);
+                
+        // Allows both sender and recipient to read messages (including the case the message has been deleted)
+        allow get: if resource == null || user(resource.data.sender) || user(resource.data.recipient);
+      }
+		}
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "thread": {
+    
+    "timeFormat": {
+      "sameDay": "[Today]",
+      "lastDay": "[Yesterday]",
+      "lastWeek": "dddd",
+      "sameElse": "L"
+    }
+  },
+
+  "conversation": {
+
+    "info": { "label": "Contact info" },
+    "delete": { "label": "Delete chat" },
+    "browse": { 
+      "label": "Browse chats", 
+      "icon": "fas:fa-comments"
+    },
+    "new": { 
+      "label": "New chat", 
+      "icon": "add_comment", 
+      "link": "/explore/people"
+    },
+
+    "timeFormat": {
+      "sameDay": "LT",
+      "lastDay": "[Yesterday]",
+      "lastWeek": "dddd",
+      "sameElse": "L"
+    },
+
+    "confirmDelete": {
+      "title": "Deleting chat",
+      "message": "You're about to *delete* this entire conversation. Are you sure?",
+      "cancel": "Cancel",
+      "ok": "Proceed"
+    }
+  },
+
+  "message": {
+    "delete": {      
+      "label": "Delete message",
+      "icon": "fas:fa-ban",
+      "message": "This message has been deleted"
+    }
+  },
+
+  "composer": {
+    "placeholder": "Type a message",
+    "emoji": { "icon": "far:fa-grin-wink", "tooltip": "Insert an emoji" },
+    "send": { "icon": "far:fa-paper-plane", "tooltip": "Send a message" }    
+  },
+
+  "canLeave": {
+    "title": "Unsent message",
+    "message": "You're about to leave the page _without_ sending the last message.",
+    "cancel": "Wait",
+    "ok": "Proceed"
+  }
+}

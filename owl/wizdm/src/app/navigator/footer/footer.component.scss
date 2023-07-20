@@ -1,0 +1,13 @@
+:host {
+
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  .content { padding: 4px 8px; width: 100%; }
+
+  .copyright { padding: 4px 8px; width: 100%; }
+}

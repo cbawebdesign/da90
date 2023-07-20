@@ -1,0 +1,19 @@
+
+:host {
+  display: block;
+  position: relative;
+  //justify-content: center;
+  //align-items: center;
+  
+  header { 
+    position: relative;
+    text-align: center; 
+  }
+
+  .bit-of-space { margin-top: 20px; }
+  
+  .disclaimer {
+    max-width: 500px;
+    text-align: justify;
+  }
+}

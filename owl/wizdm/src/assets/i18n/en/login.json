@@ -1,0 +1,105 @@
+{
+  "forgot": "[Forgot password?](forgotPassword)",
+
+  "labels": {
+    "fullname": "Full name",
+    "email": "Email",
+    "password": "Password",
+    "newEmail": "New email",
+    "newPassword": " New password"
+  },
+
+  "pages": {
+    "social": {
+      "title": "Digital Alpha LP Dashboard",
+      "message": "Sign-In with your e-mail",
+      "instructions": "Please [register](register) [sign-in](signIn) with your registered email."
+    },
+    "register": {
+      "title": "Register with your email",
+      "message": "Welcome to *Digital Alpha LP Dash*.\nAs a registered users you'll get unrestricted access to all the features",
+      "instructions": "Already have login and password? [Sign-in](signIn).",
+      "caption": "Register with my email"
+    },
+    "signIn": {
+      "title": "Sign-in with your email",
+      "message": "Please sign-in to view fund documents",
+      "caption": "Sign-in with my email"
+    },
+    "phone": {
+      "title": "Sign-in with your email",
+      "message": "Please sign-in to view fund documents",
+      "caption": "Sign-in with my email"
+    },
+    "forgotPassword": {
+      "title": "Reset password",
+      "message": "We'll be sending you a link to reset the password",
+      "instructions": "Already have login and password? [Sign-in](signIn)",
+      "caption": "Reset the password"
+    },
+    "resetPassword": {
+      "title": "New password",
+      "message": "Please select your new password",
+      "caption": "Change the password"
+    },
+    "changePassword": {
+      "title": "Change password",
+      "message": "Please confirm by _re-authenticating_",
+      "caption": "Update the password"
+    },
+    "sendEmailVerification": {
+      "title": "Email verification",
+      "message": "Your email has *not* been verified yet.\nPlease proceed with the verification",
+      "caption": "Send the verification email"
+    },
+    "verifyEmail": {
+      "title": "Email verification",
+      "message": "Thank you for verifying your email.\nEnjoy",
+      "caption": "Close"
+    },
+    "recoverEmail": {
+      "title": "Email recovery",
+      "message": "Your previous email has been restored.\nWe recommend changing your password the soonest",
+      "caption": "Close"
+    },
+    "changeEmail": {
+      "title": "Change email",
+      "message": "Please confirm by _re-authenticating_",
+      "caption": "Update the email"
+    },
+    "delete": {
+      "title": "Delete account",
+      "message": "_*WARNING!*_\nBy proceeding you'll permanently delete your account.\nPlease confirm by _re-authenticating_",
+      "caption": "Delete forever",
+      "color": "warn"
+    }
+  },
+
+  "errors": {
+    "nameRequired": "Please specify your name here",
+    "emailRequired": "Please specify an email address",
+    "emailInvalid": "Ooops! it looks like this is not a valid email",
+    "passwordRequired": "A password is required",
+
+    "auth": {
+      "wrongPassword": "This password seems wrong",
+      "userNotFound": "This user doesn't exist",
+      "userDisabled": "The user is temporarily disabled",
+      "emailAlreadyInUse": "This email is already registered",
+      "invalidEmail": "This is not a valid email",
+      "weakPassword": "This password looks too weak",
+      "networkRequestFailed": "There's some trouble with the network",
+      "invalidActionCode": "The action code provided is no longer valid",
+      "expiredActionCode": "The action code provided has expired",      
+      "unsupportedProvider": "The requestes provider is not supported",
+      "accountExistsWithDifferentCredential": "The account exists with different credentials",
+      "authDomainConfigRequired": "The autheintication domain wasn't provided",
+      "cancelledPopupRequest": "Only one popup request is allowed at one time",
+      "operationNotAllowed": "This operation is not allowed",
+      "operationNotSupportedInThisEnvironment": "Operation not supported in this environment",
+      "popupBlocked": "The authentication popup was blocked by the browser",
+      "popupClosedByUser": "The authentication has been interrupted before completing",
+      "unauthorizedDomain": "Domain not authorized"
+    }
+  }
+}

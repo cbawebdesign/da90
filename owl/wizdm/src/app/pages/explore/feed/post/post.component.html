@@ -1,0 +1,39 @@
+
+
+<wm-post-card  class="gh"    [userFirstName]="userFirstName" [userImage]="userImage" [data]="data"
+ 
+(toggleLikes)="toggleFavorite($event)" [favorite]="favorite$" [likes]="likes.counter$">
+
+</wm-post-card>
+
+<h2 style="color: #4867f3" class="newer">{{ this.newdatab }}</h2>
+<!-- <h2 style="color: #4867f3" class="newer">{{ this.newtext }}</h2> -->
+
+
+<!-- <div #viewer class="viewer"></div> -->
+<img class="new" src="/assets/img/ng.gif">
+
+
+<!-- <img class="new" src="/assets/img/loader.gif"> -->
+<!-- <a href="this.newdata"></a> -->
+
+
+<button  class="bark" ion-button (click)="saveit()">Decrypt and Open Document</button>
+
+
+
+<style>
+  .new{
+    max-width: 1000px;
+    max-height: 700px;
+  }
+.gh{
+  max-width: 1000px;
+
+}
+  .bark{
+    max-width: 1000px;
+    max-height: 70px;
+    background-color: aliceblue;
+  }
+</style>

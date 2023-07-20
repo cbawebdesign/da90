@@ -1,0 +1,25 @@
+<!-- <div *ngIf="user | async as data"> -->
+<!-- List all posts in descending order -->
+
+
+
+<wm-post class="mat-elevation-z3" fxLayout="column" *ngFor="let post of posts$ | async" [post]="post">
+ 
+
+</wm-post>
+<!-- <div *ngIf="posts$.categories == test1"> -->
+
+<!-- Add Post  -->
+  <ng-template wmFab="right bottom" [direction]="'column'">
+
+    <!-- <button mat-mini-fab color="primary"  class="mat-elevation-z11 post__entry" [routerLink]="'postdlg'">
+      <wm-icon   icon="fas:fa-plus" ></wm-icon>
+
+
+    </button> -->
+    {{user.email}}
+
+  </ng-template>
+
+<!-- </div> -->
+<!-- </div> -->

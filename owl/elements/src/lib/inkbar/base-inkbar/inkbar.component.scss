@@ -1,0 +1,11 @@
+
+.wm-inkbar {
+  
+  display: block;
+  position: relative;
+
+  .inkbar {
+    position: absolute;
+    background-color: currentColor;
+  }
+} 

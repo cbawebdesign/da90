@@ -1,0 +1,129 @@
+
+:host {
+  
+  // Let's the navigator stretch to fill all the available space
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+
+  display: flex;
+  flex-flow: column;
+
+  // Mobile menu backdrop
+  .backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    // Ensures laying onthe same menu's z-index
+    z-index: 2;
+  }
+  
+  header { 
+    // Keeps the header fixed to the top of the viewport
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    
+    // Makes sure all the children lays on the same z-index
+    z-index: 2; & * { z-index: 2; }
+
+    .mat-toolbar {
+    
+      // Makes the toolbar transparent to blendin with the page
+      background-color: transparent;
+      
+      // Uses this class to make the background appear when needed 
+      .background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+
+        // Keeps the background on the background
+        z-index: 1;
+        
+        pointer-events: none;
+
+        box-shadow: 0 6px 12px rgba(black, 0.125);
+      }
+      
+      // Customizes the rows
+      .mat-toolbar-row {
+
+        // Reduces the standard 16px left/right padding to 8px on mobile
+        @media (max-width: 959px) { padding: 0 8px; }
+
+        // Breaks the min-height on request
+        &[auto] { height: auto; }
+      }
+    }
+  }
+
+  .mat-sidenav-container {
+
+    // Ensures the sidenav container always stretch, so, to scroll with the navigator
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    overflow: visible;
+
+    // Makes sure to see trought the background from the body
+    background-color: transparent;
+
+    .mat-sidenav { 
+      overflow: visible;
+      box-sizing: border-box;
+    }
+
+    // Page's content
+    .mat-sidenav-content { 
+    
+      // Prevents the scrolling since the main scolling container remains the window
+      // NOTE: Making the overflow visible is crucial to ensure the sticky footer visibility
+      // on Safari browsers
+      overflow: visible; 
+
+      .page { position: relative; }
+
+      // Overrides the mat-sidenav-content transition making sure to align with the sticky-footer
+      transition: { duration: 400ms; timing-function: cubic-bezier(0.25, 0.8, 0.25, 1); property: margin; }
+    }
+  }
+
+  // Sticky footer adapting to the mat-sidenav-content
+  .sticky-footer {
+
+    position: fixed;
+    height: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    // Forces the GPU accelleration to avoid flickering while scrolling
+    transform: translate3d(0,0,0);
+    // Applies the very same transition used by the mat-sidenav-content
+    transition: { duration: 400ms; timing-function: cubic-bezier(0.25, 0.8, 0.25, 1); property: margin; }
+  }
+
+  // Places the fab portal on top of the viewport
+  .wm-fab-portal {
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 2;
+
+    // Applies the very same transition used by the mat-sidenav-content
+    transition: { duration: 400ms; timing-function: cubic-bezier(0.25, 0.8, 0.25, 1); property: margin; }
+  }
+}
+

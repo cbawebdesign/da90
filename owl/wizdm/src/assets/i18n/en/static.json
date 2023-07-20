@@ -1,0 +1,250 @@
+{
+  "toc": {
+    "icon": "fas:fa-list",
+    "tooltip": "Table of Contents",
+    "items": [
+
+      { "label": "Getting Started", "link": "docs/start" },
+    
+      { "label": "Financials", "items": [
+    
+
+        { "label": "2017", "items": [
+
+        { "label": "Quarter One", "link": "explore/q12017" },
+        { "label": "Quarter Two", "link": "explore/q22017" },
+        { "label": "Quarter Three", "link": "explore/q32017" },
+        { "label": "Quarter Four", "link": "explore/q42017" }
+        
+      ]
+    }, 
+    { "label": "2018", "items": [
+
+      { "label": "Quarter One", "link": "explore/q12018" },
+      { "label": "Quarter Two", "link": "explore/q22018" },
+      { "label": "Quarter Three", "link": "explore/q32018" },
+      { "label": "Quarter Four", "link": "explore/q42018" }
+      
+    ]
+  },
+  { "label": "2019", "items": [
+
+    { "label": "Quarter One", "link": "explore/q12019" },
+    { "label": "Quarter Two", "link": "explore/q22019" },
+    { "label": "Quarter Three", "link": "explore/q32019" },
+    { "label": "Quarter Four", "link": "explore/q42019" }
+    
+  ]
+},
+{ "label": "2020", "items": [
+
+  { "label": "Quarter One", "link": "explore/q12020" },
+  { "label": "Quarter Two", "link": "explore/q22020" },
+  { "label": "Quarter Three", "link": "explore/q32020" },
+  { "label": "Quarter Four", "link": "explore/q42020" }
+  
+]
+},
+{ "label": "2021", "items": [
+
+  { "label": "Quarter One", "link": "explore/q12021" },
+  { "label": "Quarter Two", "link": "explore/q22021" },
+  { "label": "Quarter Three", "link": "explore/q32021" },
+  { "label": "Quarter Four", "link": "explore/q42021" }
+  
+]
+},
+{ "label": "2022", "items": [
+
+  { "label": "Quarter One", "link": "explore/q12022" },
+  { "label": "Quarter Two", "link": "explore/q22022" },
+  { "label": "Quarter Three", "link": "explore/q32022" },
+  { "label": "Quarter Four", "link": "explore/q42022" }
+
+ 
+  
+]
+},
+{ "label": "2023", "items": [
+
+  { "label": "Quarter One", "link": "explore/q12023" },
+  { "label": "Quarter Two", "link": "explore/q22022" },
+  { "label": "Quarter Three", "link": "explore/q32022" },
+  { "label": "Quarter Four", "link": "explore/q42022" }
+
+ 
+  
+]
+}
+
+  ]
+    },
+    { "label": "Capital Account", "items": [
+    
+
+      { "label": "2017", "items": [
+
+      { "label": "Quarter One", "link": "explore" },
+      { "label": "Quarter Two", "link": "explore" },
+      { "label": "Quarter Three", "link": "explore" },
+      { "label": "Quarter Four", "link": "explore" }
+      
+    ]
+  }, 
+  { "label": "2018", "items": [
+
+    { "label": "Quarter One", "link": "explore" },
+    { "label": "Quarter Two", "link": "explore" },
+    { "label": "Quarter Three", "link": "explore" },
+    { "label": "Quarter Four", "link": "explore" }
+    
+  ]
+},
+{ "label": "2019", "items": [
+
+  { "label": "Quarter One", "link": "explore" },
+  { "label": "Quarter Two", "link": "explore" },
+  { "label": "Quarter Three", "link": "explore" },
+  { "label": "Quarter Four", "link": "explore" }
+  
+]
+},
+{ "label": "2020", "items": [
+
+{ "label": "Quarter One", "link": "explore" },
+{ "label": "Quarter Two", "link": "explore" },
+{ "label": "Quarter Three", "link": "explore" },
+{ "label": "Quarter Four", "link": "explore" }
+
+]
+},
+{ "label": "2021", "items": [
+
+{ "label": "Quarter One", "link": "explore" },
+{ "label": "Quarter Two", "link": "explore" },
+{ "label": "Quarter Three", "link": "explore" },
+{ "label": "Quarter Four", "link": "explore/cas21q4" }
+
+]
+},
+{ "label": "2022", "items": [
+
+{ "label": "Quarter One", "link": "explore/cas22q1" },
+{ "label": "Quarter Two", "link": "explore/cas22q2" },
+{ "label": "Quarter Three", "link": "explore/cas22q3" },
+{ "label": "Quarter Four", "link": "explore/cas22q4" }
+
+
+
+
+]
+},
+
+
+{ "label": "2023", "items": [
+
+  { "label": "Quarter One", "link": "explore/cas23q1" },
+  { "label": "Quarter Two", "link": "explore" },
+  { "label": "Quarter Three", "link": "explore" },
+  { "label": "Quarter Four", "link": "explore" }
+
+  
+  
+  
+  ]
+  }
+
+
+]
+  },
+  
+    
+  { "label": "K1 Statements", "items": [
+    
+
+
+    { "label": "2017", "link": "explore/k12017" },
+    { "label": "2018", "link": "explore/k12018" },
+    { "label": "2019", "link": "explore/k12019" },
+    { "label": "2020", "link": "explore/k12020" },
+    { "label": "2021", "link": "explore/k12021" },
+    { "label": "2022", "link": "explore/k12022" },
+    { "label": "2023", "link": "explore/k12023" }
+
+
+
+    
+    
+
+]
+},
+      
+{ "label": "Distribution Letters", "items": [
+    
+
+
+  { "label": "2017", "link": "explore/distribution2017" },
+  { "label": "2018", "link": "explore/distribution2018" },
+  { "label": "2019", "link": "explore/distribution2019" },
+  { "label": "2020", "link": "explore/distribution2020" },
+  { "label": "2021", "link": "explore/distribution2021" },
+  { "label": "2022", "link": "explore/distribution2022" },
+  { "label": "2023", "link": "explore/distribution2023" }
+
+
+
+
+
+]
+},
+{ "label": "Capital Calls", "items": [
+    
+
+
+  { "label": "2017", "link": "explore/capitalcall2017" },
+  { "label": "2018", "link": "explore/capitalcall2018" },
+  { "label": "2019", "link": "explore/capitalcall2019" },
+  { "label": "2020", "link": "explore/capitalcall2020" },
+  { "label": "2021", "link": "explore/capitalcall2021" },
+  { "label": "2022", "link": "explore/capitalcall2022" },
+  { "label": "2023", "link": "explore/capitalcall2023" }
+
+
+
+
+  
+
+]
+},
+{ "label": "Newsletters", "items": [
+    
+
+
+  { "label": "Quarter One", "link": "explore/newsletterq1" },
+  { "label": "Quarter Two", "link": "explore/newsletterq2" },
+  { "label": "Quarter Three", "link": "explore/newsletterq3" },
+  { "label": "Quarter Four", "link": "explore/newsletterq4" }
+  
+
+]
+},
+
+{ "label": "Communications", "items": [
+    
+
+
+  { "label": "3/10/2023", "link": "explore/communications" },
+  { "label": "3/12/2023", "link": "explore/newcommunication" }
+
+
+
+  
+
+]
+}
+    
+   
+    
+    ]
+  }
+}

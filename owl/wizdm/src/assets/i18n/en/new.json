@@ -1,0 +1,47 @@
+{
+
+  "background": { "url": "assets/img/too7.svg" },
+
+  "widgets": [
+    {
+      "type": "doesnt-exists",
+      "comment": "This is placed here for testing purposes only"
+    },
+    {
+      "type": "banner",
+      "minHeight": 350,
+
+      "textbox": {
+
+        "order": 1,
+        "title": "Digital Alpha Limited Partner Dashboard",
+
+        "action": { "caption": "Sign-In", "link": "login", "hint": "Login in with your email and password" },
+
+        "animation": { "name": "landing" }
+      },
+
+      "illustration": {
+        "order": 2,
+        "source": "assets/img/blue-buddha.svg",
+        "color": "primary"
+      }
+    },
+
+    {
+      "type": "feature-matrix",
+
+      "defaultAnimation": "bounceIn",
+
+      "features": [
+        { 
+          "icon": "fas:fa-mobile-alt",
+          "title": "Responsive navigation",
+          "description": "Navigation smoothly adapts to the device the application renders to.",
+          "url": "docs/navigator"
+        }
+     
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+
+<!-- Localized content, restore scroll position, report gtag -->
+<ng-container *wmContent="let msgs select 'landing'" scrollPositionRestoration="top" gtag="landing">
+  
+  <!-- Applies a background as per the configuration -->
+  <wm-background *ngIf="msgs.background as background"
+    [linearGradients]="background.linearGradients || undefined"
+    [attachment]="background.attachment || 'local'"
+    [position]="background.position || undefined" 
+    [repeat]="background.repeat || 'no-repeat'"    
+    [color]="background.color || undefined"
+    [image]="background.image || undefined"
+    [clip]="background.clip || undefined" 
+    [size]="background.size || 'cover'"
+    [url]="background.url">
+  </wm-background>
+
+  <!-- Dynamically loads the requested widgets -->
+  <ng-container *ngFor="let widget of msgs.widgets">
+
+    <!-- For a list of widgets check the landing.module -->
+    <ng-container [wm-load-widget]="widget"></ng-container>
+
+  </ng-container>
+
+</ng-container>
